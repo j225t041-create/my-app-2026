@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>デイリープランナー</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>デイリープランナー</h1>
+            <nav>
+                <button id="view-day" class="active">日</button>
+                <button id="view-week">週</button>
+                <button id="view-month">月</button>
+            </nav>
+            <div class="current-info">
+                <button id="prev-date">&lt;</button>
+                <h2 id="display-date">2026年5月21日</h2>
+                <button id="next-date">&gt;</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="planner-view">
+            <!-- 各ビューがここにレンダリングされます -->
+        </div>
+    </main>
+
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <h3 id="modal-title">予定を追加</h3>
+            <form id="task-form">
+                <input type="hidden" id="task-id">
+                <div class="form-group">
+                    <label for="task-title">タイトル</label>
+                    <input type="text" id="task-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="task-date">日付</label>
+                    <input type="date" id="task-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="task-time">時間</label>
+                    <input type="time" id="task-time">
+                </div>
+                <div class="form-group">
+                    <label for="task-desc">説明</label>
+                    <textarea id="task-desc"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="close-modal">キャンセル</button>
+                    <button type="submit" id="save-task">保存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <button id="add-task-btn" class="fab">+</button>
+
+    <script src="js/storage.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
